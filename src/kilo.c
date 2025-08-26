@@ -7,14 +7,14 @@
 #include <stdio.h>
 
 void enableRawMode(void) {
+
 	struct termios raw ;
 
-//stdin_flo not working , i am not able to fetch the valure of this variable
-	
-	tcgetattr(STDIN_FLENO , &raw );
+//stdin_fileno not working , i am not able to fetch the valure of this variable
+// well the problem was , spelling mistake 	
 
+	tcgetattr(STDIN_FILENO , &raw );
 	raw.c_lflag &= ~(ECHO) ;
-
 	tcsetattr(STDIN_FILENO , TCSAFLUSH , &raw );
 }
 
