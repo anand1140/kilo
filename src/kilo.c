@@ -17,7 +17,7 @@ void enableRawMode(void) {
 	raw.c_lflag &= ~(ECHO) ;
 	tcsetattr(STDIN_FILENO , TCSAFLUSH , &raw );
 }
-
+//htis is me 
 int main(void) {
 	
 	enableRawMode() ;
